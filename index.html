@@ -3,99 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Priyanshu Kumar Singh | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Priyanshu Kumar Singh - Data Science Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body, html {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            scroll-behavior: smooth;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .skill:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav ul li {
+            margin: 0 1rem;
+        }
+
+        .nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav ul li a:hover {
+            color: #23d5ab;
+        }
+
+        #typing-effect {
+            min-height: 3em;
+            font-size: 1.2em;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-link i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#languages">Languages</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <div class="hero-text">
-                <h1>Priyanshu Kumar Singh</h1>
-                <p>Passionate Data Science Enthusiast | Aspiring Data Scientist</p>
-            </div>
-        </div>
+        <h1>Priyanshu Kumar Singh</h1>
+        <p id="typing-effect"></p>
     </header>
 
-    <main>
+    <nav class="nav">
+        <ul>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+            <li><a href="#skills"><i class="fas fa-cogs"></i> Skills</a></li>
+            <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
         <section id="about">
-            <h2>About Me</h2>
-            <p>I am a driven student with a keen interest in machine learning and data science, leveraging academic knowledge and practical skills to solve complex problems. I aim to contribute to innovative projects that advance technology and improve decision-making processes.</p>
+            <h2><i class="fas fa-user-circle"></i> About Me</h2>
+            <p>Passionate and driven data science professional with a keen interest in machine learning and advanced analytics. Dedicated to solving complex problems through data-driven insights, and eager to contribute to innovative projects that advance technology and improve decision-making processes.</p>
         </section>
 
         <section id="experience">
-            <h2>Work Experience</h2>
-            <div class="experience-container">
-                <div class="work-item">
-                    <h3>Data Analyst Intern at Main Flow Services and Technologies</h3>
-                    <span class="duration">July 2024 - September 2024</span>
-                    <p>During my internship, I worked on data manipulation, visualization, and feature engineering for model training. I gained hands-on experience with Python, Pandas, Matplotlib, and Seaborn.</p>
-                </div>
-            </div>
+            <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+            <h3>Data Intern - Main Flow</h3>
+            <p>Duration: 2 months</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Conducted extensive data cleaning and preprocessing on large datasets</li>
+                <li><i class="fas fa-check-circle"></i> Developed and implemented machine learning models for predictive analytics</li>
+                <li><i class="fas fa-check-circle"></i> Collaborated with cross-functional teams to deliver actionable insights</li>
+                <li><i class="fas fa-check-circle"></i> Utilized Python, SQL, and data visualization tools to analyze complex data sets</li>
+            </ul>
         </section>
 
         <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <img src="https://img.icons8.com/dusk/64/000000/artificial-intelligence.png" alt="ML icon">
-                    <h4>Machine Learning</h4>
+            <h2><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+            <div class="skills">
+                <span class="skill"><i class="fab fa-python"></i> Python</span>
+                <span class="skill"><i class="fas fa-brain"></i> Machine Learning</span>
+                <span class="skill"><i class="fas fa-chart-bar"></i> Data Analysis</span>
+                <span class="skill"><i class="fas fa-database"></i> SQL</span>
+                <span class="skill"><i class="fas fa-chart-line"></i> Data Visualization</span>
+                <span class="skill"><i class="fas fa-calculator"></i> Statistical Analysis</span>
+                <span class="skill"><i class="fab fa-aws"></i> AWS</span>
+                <span class="skill"><i class="fas fa-table"></i> Pandas</span>
+                <span class="skill"><i class="fas fa-robot"></i> Scikit-learn</span>
+                <span class="skill"><i class="fas fa-project-diagram"></i> TensorFlow</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2><i class="fas fa-folder-open"></i> Data Science Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3><i class="fas fa-users"></i> Customer Churn Prediction</h3>
+                    <p>Developed a machine learning model to predict customer churn for a telecom company, achieving 85% accuracy.</p>
+                    <p><strong>Technologies used:</strong> Python, Scikit-learn, Pandas, Matplotlib</p>
                 </div>
-                <div class="skill-card">
-                    <img src="https://img.icons8.com/dusk/64/000000/data-analytics.png" alt="Data Analysis icon">
-                    <h4>Data Analysis</h4>
+                <div class="project">
+                    <h3><i class="fas fa-comments"></i> Sentiment Analysis of Product Reviews</h3>
+                    <p>Built an NLP model to analyze sentiment in product reviews, helping improve product features and customer satisfaction.</p>
+                    <p><strong>Technologies used:</strong> Python, NLTK, TensorFlow, Keras</p>
                 </div>
-                <div class="skill-card">
-                    <img src="https://img.icons8.com/dusk/64/000000/graph-report.png" alt="EDA icon">
-                    <h4>Exploratory Data Analysis</h4>
-                </div>
-                <div class="skill-card">
-                    <img src="https://img.icons8.com/dusk/64/000000/settings.png" alt="Feature Engineering icon">
-                    <h4>Feature Engineering</h4>
-                </div>
-                <div class="skill-card">
-                    <img src="https://img.icons8.com/dusk/64/000000/combo-chart.png" alt="Visualization icon">
-                    <h4>Data Visualization</h4>
+                <div class="project">
+                    <h3><i class="fas fa-chart-line"></i> Stock Price Prediction</h3>
+                    <p>Implemented a time series forecasting model to predict stock prices, incorporating multiple data sources and technical indicators.</p>
+                    <p><strong>Technologies used:</strong> Python, Prophet, Pandas, Plotly</p>
                 </div>
             </div>
         </section>
 
-        <section id="languages">
-            <h2>Languages Known</h2>
-            <div class="languages-grid">
-                <div class="lang-card">
-                    <img src="https://img.icons8.com/dusk/64/000000/python.png" alt="Python icon">
-                    <h4>Python</h4>
-                </div>
-                <div class="lang-card">
-                    <img src="https://img.icons8.com/dusk/64/000000/sql.png" alt="SQL icon">
-                    <h4>SQL</h4>
-                </div>
-                <div class="lang-card">
-                    <img src="https://img.icons8.com/dusk/64/000000/html-5.png" alt="HTML & CSS icon">
-                    <h4>HTML & CSS</h4>
-                </div>
-                <div class="lang-card">
-                    <img src="https://img.icons8.com/dusk/64/000000/javascript.png" alt="JavaScript icon">
-                    <h4>JavaScript (Basic)</h4>
-                </div>
+        <section id="contact">
+            <h2><i class="fas fa-paper-plane"></i> Get in Touch</h2>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    LinkedIn
+                </a>
+                <a href="mailto:your.email@example.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    Email
+                </a>
+                <a href="https://github.com/your-github" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
             </div>
         </section>
-    </main>
+    </div>
 
-    <footer id="contact">
-        <p>Connect with me on <a href="https://www.linkedin.com" target="_blank">LinkedIn</a></p>
-    </footer>
+    <script>
+        // Typing effect
+        const typingEffect = document.getElementById('typing-effect');
+        const phrases = [
+            'Machine Learning Enthusiast',
+            'Data Science Professional',
+            'Problem Solver',
+            'Continuous Learner'
+        ];
+        let i = 0;
+        let j = 0;
+        let currentPhrase = [];
+        let isDeleting = false;
+        let isEnd = false;
+
+        function loop() {
+            isEnd = false;
+            typingEffect.innerHTML = currentPhrase.join('');
+
+            if (i < phrases.length) {
+                if (!isDeleting && j <= phrases[i].length) {
+                    currentPhrase.push(phrases[i][j]);
+                    j++;
+                    typingEffect.innerHTML = currentPhrase.join('');
+                }
+
+                if(isDeleting && j <= phrases[i].length) {
+                    currentPhrase.pop(phrases[i][j]);
+                    j--;
+                    typingEffect.innerHTML = currentPhrase.join('');
+                }
+
+                if (j == phrases[i].length) {
+                    isEnd = true;
+                    isDeleting = true;
+                }
+
+                if (isDeleting && j === 0) {
+                    currentPhrase = [];
+                    isDeleting = false;
+                    i++;
+                    if (i === phrases.length) {
+                        i = 0;
+                    }
+                }
+            }
+            const spedUp = Math.random() * (80 -50) + 50;
+            const normalSpeed = Math.random() * (300 - 200) + 200;
+            const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed;
+            setTimeout(loop, time);
+        }
+
+        loop();
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 

@@ -3,278 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyanshu Kumar Singh - Data Science Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Priyanshu Kumar Singh - Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --text-color: #333;
-            --background-color: #ecf0f1;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        body, html {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+        :root {
+            --primary: #6d28d9;
+            --secondary: #4f46e5;
+            --text-light: #f3f4f6;
+            --text-dark: #1f2937;
+        }
+
+        body {
+            background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+            color: var(--text-dark);
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            scroll-behavior: smooth;
         }
 
+        /* Header Styles */
         header {
-            background-color: var(--primary-color);
-            color: #fff;
+            background: linear-gradient(to right, #6d28d9, #4f46e5);
+            color: white;
+            padding: 4rem 1rem;
             text-align: center;
-            padding: 3rem 1rem;
-            position: relative;
-            overflow: hidden;
         }
 
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .header-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .header-content p {
-            font-size: 1.2rem;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out 0.5s forwards;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .status-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            display: inline-block;
         }
 
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 0;
+            padding: 0 1rem;
         }
 
-        section {
-            background-color: #fff;
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* Main Content Styles */
+        main {
+            padding: 3rem 1rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary);
             margin-bottom: 2rem;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            font-size: 2rem;
         }
 
-        h2, h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
-        .skills {
+        .highlight-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f5f3ff, #eef2ff);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-        }
-
-        .skill {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .project {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            padding: 1rem;
-        }
-
-        .nav {
-            background-color: var(--primary-color);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .nav ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .nav ul li {
-            margin: 0 0.5rem;
-        }
-
-        .nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            padding: 0.5rem;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
             margin-top: 1rem;
         }
 
-        .contact-link {
-            display: flex;
-            align-items: center;
-            color: var(--primary-color);
-            text-decoration: none;
+        .skill-tag {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
         }
 
-        .contact-link i {
-            font-size: 1.5rem;
-            margin-right: 0.5rem;
+        .cta-section {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .cta-button:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
         }
 
         @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-            .nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            .nav ul li {
-                margin: 0.5rem 0;
-            }
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            .header-content h1 {
-                font-size: 2rem;
-            }
-            .header-content p {
-                font-size: 1rem;
+            .highlights, .projects-grid, .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="header-content">
+        <div class="container">
+            <span class="status-badge">Open for Opportunities</span>
             <h1>Priyanshu Kumar Singh</h1>
-            <p>Data Science Professional</p>
-        </div>
-    </header>
-
-    <nav class="nav">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Passionate and driven data science professional with a keen interest in machine learning and advanced analytics. Dedicated to solving complex problems through data-driven insights, and eager to contribute to innovative projects that advance technology and improve decision-making processes.</p>
-        </section>
-
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <h3>Data Analyst Intern - Main Flow Technologies and Ltd.</h3>
-            <p>Duration: 2 months</p>
-            <ul>
-                <li>Conducted extensive data cleaning and preprocessing on large datasets</li>
-                <li>Developed and implemented machine learning models for predictive analytics</li>
-                <li>Collaborated with cross-functional teams to deliver actionable insights</li>
-                <li>Utilized Python, SQL, and data visualization tools to analyze complex data sets</li>
-            </ul>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills">
-                <span class="skill">Python</span>
-                <span class="skill">Machine Learning</span>
-                <span class="skill">Data Analysis</span>
-                <span class="skill">SQL</span>
-                <span class="skill">Data Visualization</span>
-                <span class="skill">Statistical Analysis</span>
-                <span class="skill">AWS</span>
-                <span class="skill">Pandas</span>
-                <span class="skill">Scikit-learn</span>
-                <span class="skill">TensorFlow</span>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Data Science Projects</h2>
-            <div class="projects">
-                <div class="project">
-                    <h3>Customer Churn Prediction</h3>
-                    <p>Developed a machine learning model to predict customer churn for a telecom company, achieving 85% accuracy.</p>
-                    <p><strong>Technologies used:</strong> Python, Scikit-learn, Pandas, Matplotlib</p>
-                </div>
-                <div class="project">
-                    <h3>Sentiment Analysis of Product Reviews</h3>
-                    <p>Built an NLP model to analyze sentiment in product reviews, helping improve product features and customer satisfaction.</p>
-                    <p><strong>Technologies used:</strong> Python, NLTK, TensorFlow, Keras</p>
-                </div>
-                <div class="project">
-                    <h3>Stock Price Prediction</h3>
-                    <p>Implemented a time series forecasting model to predict stock prices, incorporating multiple data sources and technical indicators.</p>
-                    <p><strong>Technologies used:</strong> Python, Prophet, Pandas, Plotly</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <div class="contact-links">
-                <a href="https://www.linkedin.com/in/priyanshu-kumar-singh-753b97249/" target="_blank" class="contact-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="mailto:psingh2773@gmail.com" class="contact-link">
+            <p class="subtitle">Data Analyst & Machine Learning Enthusiast</p>
+            <p class="tagline">Transforming complex data into actionable insights | Passionate about building scalable ML solutions</p>
+            <div class="social-links">
+                <a href="mailto:psingh2773@gmail.com" class="social-link">
                     <i class="fas fa-envelope"></i> Email
                 </a>
-                <a href="https://github.com/Priyanshu2773" target="_blank" class="contact-link">
+                <a href="https://www.linkedin.com/in/priyanshu-kumar-singh-753b97249" class="social-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="#" class="social-link">
                     <i class="fab fa-github"></i> GitHub
                 </a>
             </div>
+        </div>
+    </header>
+
+
+    <main class="container">
+        <section class="section">
+        </div>
+            <div class="highlights">
+                <div class="highlight-card">
+                    <i class="fas fa-database fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Data-Driven</h3>
+                    <p>Experienced in analyzing complex datasets and deriving meaningful insights</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-brain fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>ML Enthusiast</h3>
+                    <p>Passionate about implementing machine learning solutions for real-world problems</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-code fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Problem Solver</h3>
+                    <p>Strong analytical mindset with a focus on efficient solutions</p>
+                </div>
+            </div>
         </section>
-    </div>
+
+        <section class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <i class="fas fa-lock fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Encryption and Decryption Tool</h3>
+                    <p class="date">FEBRUARY 2024 - JUNE 2024</p>
+                    <ul>
+                        <li>Developed a Python-based tool utilizing AES encryption algorithm</li>
+                        <li>Implemented user-friendly interface for secure data handling</li>
+                        <li>Added robust error handling and data validation</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <i class="fas fa-shield-alt fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Credit Card Fraud Detection</h3>
+                    <p class="date">AUGUST 2023 - DECEMBER 2023</p>
+                    <ul>
+                        <li>Implemented ML algorithms for fraud detection with 95% accuracy</li>
+                        <li>Processed and analyzed large-scale transaction datasets</li>
+                        <li>Developed real-time monitoring capabilities</li>
+                    </ul>
+                </div>
+                <div class="project-card">
+                    <i class="fas fa-film fa-2x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Movie Recommendation System</h3>
+                    <p class="date">JANUARY 2023 - APRIL 2023</p>
+                    <ul>
+                        <li>Built collaborative filtering system using MovieLens dataset</li>
+                        <li>Implemented data visualization using ggplot2 in R</li>
+                        <li>Achieved 87% recommendation accuracy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">JAVA</span>
+                        <span class="skill-tag">PYTHON</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">DJANGO</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">POWER BI</span>
+                        <span class="skill-tag">MACHINE LEARNING</span>
+                        <span class="skill-tag">LINUX</span>
+                        <span class="skill-tag">DATA ANALYSIS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="highlight-card">
+                <h3>B.Tech in Computer Science Engineering (Big Data Analytics)</h3>
+                <p>Chandigarh University, Ghanian</p>
+                <p>2022-2026 | CGPA: 7.6</p>
+                <div style="margin-top: 1rem;">
+                    <p><strong>Relevant Coursework:</strong></p>
+                    <ul style="list-style-position: inside; margin-top: 0.5rem;">
+                        <li>Machine Learning Fundamentals</li>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Big Data Analytics</li>
+                        <li>Database Management Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>Interested in Collaboration?</h2>
+            <p>Let's connect and discuss how we can work together!</p>
+            <a href="mailto:psingh2773@gmail.com" class="cta-button">
+                Get in Touch <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Priyanshu Kumar Singh. All rights reserved.</p>
+    </footer>
 
     <script>
-        // Simple scroll behavior
+        // Add smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+
+        // Add animation on scroll
+        window.addEventListener('scroll', () => {
+            const elements = document.querySelectorAll('.highlight-card, .project-card, .skill-card');
+            elements.forEach(element => {
+                const position = element.getBoundingClientRect();
+                if (position.top < window.innerHeight) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
             });
         });
     </script>
